@@ -29,6 +29,8 @@ export const Home = () => {
   useEffect(() => {
     fetchArticles();
   }, [query]);
+
+  console.log(articles);
   return (
     <div className="container flex gap-4 mx-auto px-4">
       <pre className="text-xs whitespace-pre-wrap">
