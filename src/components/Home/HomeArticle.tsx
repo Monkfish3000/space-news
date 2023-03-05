@@ -4,7 +4,7 @@ type Props = {
   article: Article;
 };
 
-export const HomeArticle = ({ article }: Props) => {
+export const HomeArticle = ({ article }: Props): any => {
   <div className="flex flex-col gap-4 py-4 border-d font-mono">
     <img
       src={article.imageUrl}
