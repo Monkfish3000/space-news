@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 
-import type { Article } from '../types/article';
-import { queryAtom } from '../atoms';
+import type { Article } from '../../types/article';
+import { queryAtom } from '../../atoms';
 
 export const Home = () => {
   const [query] = useAtom(queryAtom);
