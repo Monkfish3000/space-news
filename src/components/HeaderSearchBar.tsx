@@ -23,6 +23,7 @@ export const HeaderSearchBar = () => {
           <MagnifyingGlassIcon className="h-4 w-4 text-gray-400" />
         </div>
         <input
+          autoFocus
           className="block p-2.5 pl-10 w-full z-20 text-lg text-gray-900 border-non focus-visible:outline-none"
           type="search"
           placeholder="Search..."
