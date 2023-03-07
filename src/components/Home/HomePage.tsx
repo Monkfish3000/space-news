@@ -24,7 +24,7 @@ export const HomePage = () => {
 
   const { data: articles, isLoading } = useFetch<Article[]>(fetchUrl);
 
-  console.log(articles);
+  // console.log(articles);
 
   return (
     <div className="container mx-auto">
