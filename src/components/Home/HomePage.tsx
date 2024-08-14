@@ -1,22 +1,22 @@
-import { RocketLaunchIcon } from '@heroicons/react/24/solid';
-import { useAtom } from 'jotai';
-import { useMemo } from 'react';
+import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { useAtom } from "jotai";
+import { useMemo } from "react";
 
-import type { Article } from '../../types/article';
-import { HomeArticle } from './HomeArticle';
-import { queryAtom } from '../../atoms';
-import { useFetch } from '../../hooks/useFetch';
+import type { Article } from "../../types/article";
+import { HomeArticle } from "./HomeArticle";
+import { queryAtom } from "../../atoms";
+import { useFetch } from "../../hooks/useFetch";
 
 export const HomePage = () => {
   const [query] = useAtom(queryAtom);
 
   const fetchUrl = useMemo(() => {
-    const url = new URL('https://api.spaceflightnewsapi.net/v3/articles');
-    url.searchParams.append('_sort', 'publishedAt:DESC');
-    url.searchParams.append('_limit', '18');
+    const url = new URL("https://api.spaceflightnewsapi.net/v4/articles/");
+    url.searchParams.append("_sort", "publishedAt:DESC");
+    url.searchParams.append("_limit", "18");
 
     if (query.length > 0) {
-      url.searchParams.append('_q', query);
+      url.searchParams.append("summary_contains", query);
     }
 
     return url;

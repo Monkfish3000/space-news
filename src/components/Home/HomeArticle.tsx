@@ -1,18 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { Article } from '../../types/article';
+import { Article } from "../../types/article";
 
 type Props = {
   article: Article;
 };
 
 export const HomeArticle = ({ article }: Props): any => {
+  // console.log(article);
   return (
     <div className="flex flex-col gap-4 py-4 border-b font-mono">
       <Link to={`/article/${article.id}`} preventScrollReset={true}>
         <picture>
           <img
-            src={article.imageUrl}
+            src={article.image_url}
             alt={article.title}
             className="aspect-video object-cover"
             width="1920"
@@ -24,7 +25,7 @@ export const HomeArticle = ({ article }: Props): any => {
       <h2 className="text-2l">{article.title}</h2>
       <p className="text-sm hidden lg:block">{article.summary}</p>
       <p className="text-sm text-gray-500">
-        {new Date(article.publishedAt).toLocaleString()}
+        {new Date(article.published_at).toLocaleString()}
       </p>
     </div>
   );
