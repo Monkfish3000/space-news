@@ -16,7 +16,7 @@ export const HomePage = () => {
     url.searchParams.append("_limit", "18");
 
     if (query.length > 0) {
-      url.searchParams.append("_q", query);
+      url.searchParams.append("summary_contains", query);
     }
 
     return url;

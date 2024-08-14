@@ -23,7 +23,7 @@ export const ArticlePage = () => {
           <picture>
             <img
               className="mt-4 w-full aspect-video object-cover"
-              src={article.imageUrl}
+              src={article.image_url}
               alt={article.title}
               width="1920"
               height="1080"
