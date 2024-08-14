@@ -31,7 +31,7 @@ export const ArticlePage = () => {
             />
           </picture>
           <p className="mt-2 text-sm text-gray-500">
-            {new Date(article.publishedAt).toLocaleString()}
+            {new Date(article.published_at).toLocaleString()}
           </p>
           <h2 className="mt-4 text-4xl">{article.title}</h2>
           <p className="mt-4 text-base">{article.summary}</p>
