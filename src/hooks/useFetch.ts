@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useFetch = <T extends any>(
   url: URL
@@ -25,10 +25,11 @@ export const useFetch = <T extends any>(
       });
 
       const data = await res.json();
+      const extractedData = data?.results || data;
 
       setState((prevState) => ({
         ...prevState,
-        data,
+        data: extractedData,
         isLoading: false,
       }));
     } catch (error: unknown) {
@@ -37,10 +38,10 @@ export const useFetch = <T extends any>(
         isLoading: false,
         error:
           error instanceof Error
-            ? error.name !== 'AbortError'
+            ? error.name !== "AbortError"
               ? (error as Error)
               : undefined
-            : new Error('Unkown error'),
+            : new Error("Unkown error"),
       }));
     }
   };

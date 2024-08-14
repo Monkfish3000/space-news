@@ -1,4 +1,5 @@
 export type Article = {
+  image_url: string | undefined;
   id: number;
   title: string;
   url: string;

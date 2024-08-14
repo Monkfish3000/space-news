@@ -1,8 +1,8 @@
-import { useAtom } from 'jotai';
-import { useEffect, useState } from 'react';
+import { useAtom } from "jotai";
+import { useEffect, useState } from "react";
 
-import type { Article } from '../../types/article';
-import { queryAtom } from '../../atoms';
+import type { Article } from "../../types/article";
+import { queryAtom } from "../../atoms";
 
 export const Home = () => {
   const [query] = useAtom(queryAtom);
@@ -10,10 +10,10 @@ export const Home = () => {
 
   const fetchArticles = async () => {
     try {
-      const url = new URL('https://api.spaceflightnewsapi.net/v3/articles');
-      url.searchParams.append('_sort', 'publishedAt:DESC');
+      const url = new URL("https://api.spaceflightnewsapi.net/v4/articles/");
+      url.searchParams.append("_sort", "publishedAt:DESC");
       if (query.length > 0) {
-        url.searchParams.append('_q', query);
+        url.searchParams.append("_q", query);
       }
 
       const res = await fetch(url.toString());
@@ -30,7 +30,6 @@ export const Home = () => {
     fetchArticles();
   }, [query]);
 
-  console.log(articles);
   return (
     <div className="container flex gap-4 mx-auto px-4">
       <pre className="text-xs whitespace-pre-wrap">

@@ -1,15 +1,15 @@
-import { RocketLaunchIcon } from '@heroicons/react/24/solid';
-import { useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { useMemo } from "react";
+import { useParams } from "react-router-dom";
 
-import type { Article } from '../../types/article';
-import { useFetch } from '../../hooks/useFetch';
+import type { Article } from "../../types/article";
+import { useFetch } from "../../hooks/useFetch";
 
 export const ArticlePage = () => {
   const { id } = useParams<{ id: string }>();
 
   const fetchUrl = useMemo(() => {
-    return new URL(`https://api.spaceflightnewsapi.net/v3/articles/${id}`);
+    return new URL(`https://api.spaceflightnewsapi.net/v4/articles/${id}`);
   }, [id]);
 
   const { data: article, isLoading } = useFetch<Article>(fetchUrl);
