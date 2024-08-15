@@ -1,10 +1,10 @@
-import type { ChangeEvent } from 'react';
-import _debounce from 'lodash/debounce';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { useAtom } from 'jotai';
-import { useCallback } from 'react';
+import type { ChangeEvent } from "react";
+import _debounce from "lodash/debounce";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { useAtom } from "jotai";
+import { useCallback } from "react";
 
-import { queryAtom } from '../atoms';
+import { queryAtom } from "../atoms";
 
 export const HeaderSearchBar = () => {
   const [_, setQuery] = useAtom(queryAtom);
@@ -26,7 +26,7 @@ export const HeaderSearchBar = () => {
           autoFocus
           className="block p-2.5 pl-10 w-full z-20 text-lg text-gray-900 border-non focus-visible:outline-none"
           type="search"
-          placeholder="Search..."
+          placeholder="Search something space related. E.g. 'NASA'"
           onChange={onChangeHandler}
         />
       </div>
